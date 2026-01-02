@@ -1,0 +1,28 @@
+lambnas.home.arpa {
+  # DSM base UI
+  handle {
+    reverse_proxy https://192.168.1.9:5001 {
+      transport http {
+        tls_insecure_skip_verify
+      }
+    }
+  }
+
+  # Synology Drive
+  handle /drive* {
+    reverse_proxy https://192.168.1.9:5001 {
+      transport http {
+        tls_insecure_skip_verify
+      }
+    }
+  }
+
+  # Synology Photos
+  handle /photos* {
+    reverse_proxy https://192.168.1.9:5001 {
+      transport http {
+        tls_insecure_skip_verify
+      }
+    }
+  }
+}
