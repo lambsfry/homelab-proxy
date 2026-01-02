@@ -1,0 +1,3 @@
+proxy.home.arpa {
+  respond "Caddy proxy is alive"
+}
