@@ -1,0 +1,6 @@
+{
+  # Internal TLS using Caddy's local CA
+  local_certs
+}
+
+import /etc/caddy/sites.d/*.caddy
