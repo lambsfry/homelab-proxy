@@ -1,0 +1,12 @@
+openclaw.home.arpa {
+  tls internal
+  basicauth {
+    openclaw {env.OPENCLAW_BASIC_AUTH_HASH}
+  }
+  reverse_proxy 192.168.1.18:27891 {
+    header_up Host {host}
+    header_up X-Real-IP {remote_host}
+    header_up X-Forwarded-For {remote_host}
+    header_up X-Forwarded-Proto {scheme}
+  }
+}
